@@ -8,7 +8,7 @@ go:
 
 script:
   - go test -v ./...
-  - docker build -t dimshimdim/cicd-2 .
+  - docker build -t helloworld .
 
 deploy:
   provider: script
