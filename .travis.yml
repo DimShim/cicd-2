@@ -16,5 +16,5 @@ deploy:
   on:
     branch: master
 
-after_doploy:
-  - .travis/.heroku_deploy
+after_success:
+  - sh .travis/heroku_deploy.sh
