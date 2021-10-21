@@ -17,4 +17,4 @@ deploy:
     branch: master
 
 after_doploy:
-  - ./heroku_deploy
+  - .travis/.heroku_deploy
