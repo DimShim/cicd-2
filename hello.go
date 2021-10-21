@@ -12,15 +12,26 @@ func main() {
 		c.String(200, "Hello World 2")
 	})
 
-	api := r.Group("/api")
-
-	api.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
-
 	r.Use(static.Serve("/", static.LocalFile("./views", true)))
 
 	r.Run()
+}
+
+func test() {
+    setupServer().Run()
+}
+
+// The engine with all endpoints is now extracted from the main function
+func setupServer() *gin.Engine {
+    r := gin.Default()
+
+    r.GET("/ping", pingEndpoint)
+
+    return r
+}
+
+func pingEndpoint(c *gin.Context) {
+    c.JSON(200, gin.H{
+        "message": "pong",
+    })
 }
