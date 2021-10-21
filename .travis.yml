@@ -16,3 +16,8 @@ deploy:
   on:
     branch: master
 
+doploy:
+  provider: script
+  script: bash .heroku_deploy
+  on:
+    branch: master
