@@ -18,7 +18,7 @@ func main() {
 }
 
 func test() {
-    setupServer().Run()
+    setupServer()
 }
 
 // The engine with all endpoints is now extracted from the main function
