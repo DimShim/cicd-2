@@ -9,7 +9,7 @@ func main() {
 	r := gin.Default()
 
 	r.GET("/hello", func(c *gin.Context) {
-		c.String(200, "Hello World 2")
+		c.String(200, "Hello World 3")
 	})
 
 	r.Use(static.Serve("/", static.LocalFile("./views", true)))
